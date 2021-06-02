@@ -1,6 +1,22 @@
 let sortBtn = document.querySelector('.filtres-menu').children;
 let sortItem = document.querySelector('.elements-portfolio').children;
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  let topButton = document.getElementById("topButton")
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    topButton.style.display = "block";
+  } else {
+    topButton.style.display = "none";
+  }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 for (let i = 0; i < sortBtn.length; i++) {
     sortBtn[i].addEventListener('click', function () {
         for (let j = 0; j < sortBtn.length; j++) {
